@@ -1,0 +1,53 @@
+/* pages/lol/index.wxss */
+.container{
+  padding: 32rpx;
+  box-sizing: border-box;
+  width: 100%;
+  background: #F2F6FC;
+  min-height: 100vh;
+}
+
+.container-header{
+  font-size: 42rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-header-ipt{
+  background: #ffffff;
+  border-radius: 10rpx;
+  padding: 10rpx;
+  width: 45%;
+  font-size: 32rpx;
+}
+.quick-link{
+  margin: 15rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quick-link button{
+  padding: 10rpx 20rpx;
+  width: unset;
+  background: #409EFF;
+  color: #FFFFFF;
+}
+
+.quick-link .btn-active{
+  background: #67C23A;
+}
+
+.result-content{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+.result-item{
+  margin: 12rpx;
+  padding: 12rpx;
+  font-size: 24rpx;
+  background: rgb(217, 236, 255);
+}

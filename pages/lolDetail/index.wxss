@@ -1,0 +1,64 @@
+.hero-view {
+  position: relative;
+}
+
+wx-swiper {
+  height: 430rpx;
+}
+
+.skins-item {
+  width: 100%;
+}
+
+.skins-item image {
+  width: 100%;
+}
+
+.hero-info {
+  position: absolute;
+  top: 40rpx;
+  left: 3%;
+  color: #FFFFFF;
+}
+
+.hero-info text {
+  margin: 0 4rpx;
+}
+
+.hero-spells-title {
+  margin: 20rpx 0;
+  text-align: center;
+  font-size: 36rpx;
+  letter-spacing: 4rpx;
+}
+
+.hero-spells-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.hero-spells-content-item {
+  text-align: center;
+  font-size: 24rpx;
+}
+
+.hero-spells-content-item-image {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.hero-spells-description{
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+
+.hero-shortBio{
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  letter-spacing: 2rpx;
+}

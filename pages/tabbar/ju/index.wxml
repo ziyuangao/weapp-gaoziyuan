@@ -1,0 +1,16 @@
+<view class="container">
+  <!-- 微信图标部分 -->
+  <view class="icon-section">
+    <image 
+      class="wechat-icon" 
+      src="../../../assets/img/tabbar/wechat.png"
+      mode="widthFix"
+    />
+  </view>
+  
+  <!-- 文案部分 -->
+  <view class="text-section">
+    <view class="text-content">欢迎使用百宝箱小程序</view>
+    <view class="text-content">无需登录,享受便捷生活</view>
+  </view>
+</view>

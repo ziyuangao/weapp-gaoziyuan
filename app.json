@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/tabbar/gong/index",
+    "pages/tabbar/ju/index",
+    "pages/tabbar/xiang/index",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/lol/index",
+    "pages/lolDetail/index"
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/tabbar/gong/index",
+        "text": "工",
+        "iconPath": "./assets/img/tabbar/menu.png",
+        "selectedIconPath": "./assets/img/tabbar/menu-selected.png"
+      },
+      {
+        "pagePath": "pages/tabbar/ju/index",
+        "text": "具",
+        "iconPath": "./assets/img/tabbar/user.png",
+        "selectedIconPath": "./assets/img/tabbar/user-selected.png"
+      },
+      {
+        "pagePath": "pages/tabbar/xiang/index",
+        "text": "箱",
+        "iconPath": "./assets/img/tabbar/page.png",
+        "selectedIconPath": "./assets/img/tabbar/page-selected.png"
+      }
+    ]
+  },
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarBackgroundColor": "#ffffff"
+  },
+  "style": "v2",
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "usingComponents": {}
+}

@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.icon-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.wechat-icon {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.text-section {
+  padding: 0 40rpx;
+}
+
+.text-content {
+  font-size: 32rpx;
+  color: #333;
+  text-align: center;
+  line-height: 1.6;
+  white-space: pre-line;
+}

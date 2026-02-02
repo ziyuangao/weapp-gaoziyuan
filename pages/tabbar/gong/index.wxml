@@ -1,0 +1,27 @@
+<view class="page-container">
+  <!-- 白色内容区域 -->
+  <view class="content-area">
+    <!-- 项目列表 - 横向3个一直往下排列 -->
+    <view class="item-list">
+      <view 
+        class="item-box" 
+        wx:for="{{list}}"
+        wx:key="path"
+        data-index="{{index}}"
+        data-path="{{item.path}}"
+        bindtap="onItemTap"
+      >
+        <!-- 图片区域 -->
+        <view class="item-image-box">
+          <image class="item-image" src="{{item.icon}}" mode="aspectFit" />
+        </view>
+        
+        <!-- 文字区域 -->
+        <view class="item-text-area">
+          <view class="item-main-title">{{item.title}}</view>
+          <view class="item-sub-title">{{item.subTitle}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

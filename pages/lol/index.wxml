@@ -1,0 +1,46 @@
+<!--pages/lol/index.wxml-->
+<view wx:if="{{loading}}" class="loading">
+  加载中...
+</view>
+<view class="container" wx:else>
+  <view class="container-header">
+    <text wx:if="{{lolData.version}}">版本{{lolData.version}}</text>
+    <input 
+      type="text" 
+      placeholder="输入关键词搜索" 
+      class="container-header-ipt" 
+      confirm-type="search" 
+      bindblur="handleGetResult" 
+      value="{{keyword}}"
+    />
+  </view>
+  
+  <view class="quick-link">
+    <!-- 修正循环方式 -->
+    <block wx:for="{{rolesConfig}}" wx:key="key">
+      <button 
+        class="{{currentType == item.key?'btn-active':''}}" 
+        bind:tap="quickLinkTap" 
+        data-type="{{item.key}}"
+      >
+        {{item.value}}
+      </button>
+    </block>
+  </view>
+
+  <view class="result-content" wx:if="{{resultArr.length}}">
+    <block wx:for="{{resultArr}}" wx:key="heroId">
+      <view 
+        class="result-item" 
+        bind:tap="getDetail" 
+        data-id="{{item.heroId}}"
+      >
+        {{item.name}}-{{item.title}}
+      </view>
+    </block>
+  </view>
+  
+  <view wx:else class="result-empty">
+    抱歉，未找到符合要求的结果
+  </view>
+</view>

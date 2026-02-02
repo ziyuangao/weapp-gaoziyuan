@@ -1,0 +1,51 @@
+<wxs module="filters">
+  function numberTrunc(num){
+    return ~~num
+  }
+
+  module.exports = {
+    numberTrunc:numberTrunc
+  }
+</wxs>
+
+
+<view class="hero-view">
+  <view class="hero-skins">
+    <swiper class="skins-swiper" indicator-dots indicator-color="#E4E7ED" indicator-active-color="#67C23A" bindchange="swiperIndexChange">
+      <block wx:for="{{skins}}" wx:key="skinId">
+        <swiper-item class="skins-item">
+          <image src="{{item.centerImg}}" mode="aspectFit" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="hero-info">
+    <view>
+      <view>{{skins[swiperIndex].name}}</view>
+      <view>
+        <text wx:for="{{heroData.hero.roles}}" wx:key="key">{{ rolesConfig[item] }}</text>
+      </view>
+      <view>初始HP:{{ filters.numberTrunc(heroData.hero.hp) }}</view>
+      <view>初始MP:{{ filters.numberTrunc(heroData.hero.mp) }}</view>
+    </view>
+  </view>
+
+  <view class="hero-spells">
+    <view class="hero-spells-title">英雄介绍</view>
+    <view class="hero-shortBio">{{heroData.hero.shortBio}}</view>
+    <view class="hero-spells-title">技能介绍</view>
+    <view class="hero-spells-content">
+      <view wx:for="{{sortedSpells}}" wx:key="spellKey" 
+      data-key="{{item.spellKey}}" bind:tap="showDescription"
+      class="hero-spells-content-item">
+        <image src="{{item.abilityIconPath}}" mode="" class="hero-spells-content-item-image" />
+        <view>{{item.name}}</view>
+      </view>
+    </view>
+    <view class="hero-spells-description" wx:if="{{spellsKey}}" >
+      {{sortedSpells[keyIndex].description}}
+    </view>
+  </view>
+</view>
+
+
