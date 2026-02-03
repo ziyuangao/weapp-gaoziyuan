@@ -6,7 +6,8 @@ Page({
    */
   data: {
     list:[
-      { path:'/pages/lol/index',title:'英雄联盟查询',subTitle:'皮肤查询',icon:'../../../assets/img/tabbar/lol.png'}
+      { path:'/pages/lol/index',title:'英雄联盟查询',subTitle:'皮肤查询',icon:'../../../assets/img/tabbar/lol.png'},
+      { path:'/pages/bmi/index',title:'身体指数计算',subTitle:'计算BMI值',icon:'../../../assets/img/tabbar/bmi.png'},
     ]
   },
 

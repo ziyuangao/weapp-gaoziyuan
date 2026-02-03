@@ -1,0 +1,76 @@
+<!-- pages/bmi/index.wxml -->
+<view class="bmi-page">
+  <!-- 标题 -->
+  <view class="page-title">BMI 健康计算器</view>
+
+  <!-- 输入区域 -->
+  <view class="input-section">
+    <view class="input-item">
+      <text class="input-label">身高 (cm)</text>
+      <input
+        class="input-box"
+        type="digit"
+        placeholder="请输入身高"
+        value="{{height}}"
+        bindinput="onHeightInput"
+      />
+      <text class="input-unit">厘米</text>
+    </view>
+    <view class="error-tip" wx:if="{{heightError}}">{{heightError}}</view>
+
+    <view class="input-item">
+      <text class="input-label">体重 (kg)</text>
+      <input
+        class="input-box"
+        type="digit"
+        placeholder="请输入体重"
+        value="{{weight}}"
+        bindinput="onWeightInput"
+      />
+      <text class="input-unit">公斤</text>
+    </view>
+    <view class="error-tip" wx:if="{{weightError}}">{{weightError}}</view>
+  </view>
+
+  <!-- 计算按钮 -->
+  <button
+    class="calculate-btn"
+    type="primary"
+    loading="{{isLoading}}"
+    bindtap="onCalculate"
+    disabled="{{isLoading}}"
+  >
+    {{isLoading ? '计算中...' : '开始计算'}}
+  </button>
+
+  <!-- 结果展示区域 -->
+  <view class="result-section" wx:if="{{showResult}}">
+    <view class="result-card">
+      <view class="result-title">您的健康报告</view>
+      
+      <view class="bmi-value">
+        <text class="bmi-number">{{bmiResult}}</text>
+        <text class="bmi-unit">BMI指数</text>
+      </view>
+
+      <view class="advice-box">
+        <text class="advice-label">❤️ 友情提示</text>
+        <text class="advice-content">{{healthAdvice}}</text>
+      </view>
+
+      <!-- 参考标准说明 -->
+      <view class="reference">
+        <text class="reference-title">BMI参考标准</text>
+        <text class="reference-item">偏瘦：＜18.5</text>
+        <text class="reference-item">正常：18.5 ~ 23.9</text>
+        <text class="reference-item">超重：24.0 ~ 27.9</text>
+        <text class="reference-item">肥胖：≥28.0</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 网络错误提示 -->
+  <view class="error-toast" wx:if="{{showNetworkError}}">
+    网络异常，请检查网络后重试
+  </view>
+</view>

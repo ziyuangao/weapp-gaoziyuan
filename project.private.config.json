@@ -23,15 +23,8 @@
     "miniprogram": {
       "list": [
         {
-          "name": "lol详情页",
-          "pathName": "pages/lolDetail/index",
-          "query": "id=64",
-          "scene": null,
-          "launchMode": "default"
-        },
-        {
-          "name": "lol",
-          "pathName": "pages/lol/index",
+          "name": "pages/bmi/index",
+          "pathName": "pages/bmi/index",
           "query": "",
           "launchMode": "default",
           "scene": null
