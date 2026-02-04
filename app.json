@@ -9,7 +9,8 @@
     "pages/lolDetail/index",
     "pages/bmi/index",
     "pages/gas/index",
-    "pages/setting/index"
+    "pages/setting/index",
+    "pages/dog/index"
   ],
   "tabBar": {
     "list": [

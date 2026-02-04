@@ -1,0 +1,148 @@
+/* pages/dog-diary/index.wxss */
+
+/* 页面容器 */
+.dog-page {
+  padding: 15rpx;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  box-sizing: border-box;
+}
+
+/* 预览区域 */
+.preview-section {
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.05);
+}
+
+.preview-label {
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 20rpx;
+  font-weight: 500;
+}
+
+.preview-image {
+  width: 100%;
+  border-radius: 12rpx;
+  border: 1rpx solid #eee;
+  display: block;
+}
+
+.template-image {
+  width: 100%;
+  border-radius: 12rpx;
+  display: block;
+}
+
+.image-size {
+  display: block;
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 15rpx;
+}
+
+/* 编辑区域 */
+.editor-section {
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin: 10rpx 0;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.05);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25rpx;
+}
+
+.section-title {
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 500;
+}
+
+.random-btn {
+  background: #07c160;
+  color: #fff;
+  border-radius: 40rpx;
+  font-size: 24rpx;
+  padding: 0 25rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.random-btn[disabled] {
+  background: #ddd;
+}
+
+.text-input {
+  width: 100%;
+  min-height: 200rpx;
+  font-size: 28rpx;
+  line-height: 1.5;
+  color: #333;
+  padding: 20rpx;
+  border: 2rpx solid #eee;
+  border-radius: 12rpx;
+  box-sizing: border-box;
+  background: #fafafa;
+}
+
+.text-input:focus {
+  border-color: #07c160;
+  background: #fff;
+}
+
+.text-counter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.text-tip {
+  color: #07c160;
+}
+
+/* 操作区域 */
+.action-section {
+  padding: 30rpx;
+  background: #fff;
+  border-radius: 16rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.05);
+}
+
+.generate-btn {
+  background: #07c160;
+  border-radius: 50rpx;
+  font-size: 32rpx;
+  height: 90rpx;
+  line-height: 1.5!important;
+}
+
+.generate-btn[disabled] {
+  background: #ddd;
+}
+
+.action-tip {
+  text-align: center;
+  margin-top: 20rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+
+/* 隐藏的Canvas */
+.hidden-canvas {
+  position: fixed;
+  left: -10000rpx;
+  top: -10000rpx;
+  opacity: 0;
+  pointer-events: none;
+}

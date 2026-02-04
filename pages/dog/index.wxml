@@ -1,0 +1,77 @@
+<!-- pages/dog-diary/index.wxml -->
+<view class="dog-page">
+  
+  <!-- 图片预览区域 -->
+  <view class="preview-section" wx:if="{{generatedImagePath}}">
+    <view class="preview-label">生成结果（长按保存/分享）</view>
+    <image 
+      class="preview-image" 
+      src="{{generatedImagePath}}" 
+      mode="widthFix"
+      show-menu-by-longpress
+    />
+  </view>
+  
+  <!-- 背景图预览 -->
+  <image 
+    class="template-image" 
+    src="../../assets/img/dog/dog.jpg" 
+    mode="widthFix"
+  />
+  
+  <!-- 文案编辑区域 -->
+  <view class="editor-section">
+    <view class="section-header">
+      <text class="section-title">日记内容</text>
+      <view 
+        class="random-btn" 
+        size="mini"
+        bindtap="onRandomText"
+        loading="{{isLoadingRandom}}"
+        disabled="{{isLoadingRandom}}"
+      >
+        {{isLoadingRandom ? '获取中...' : '随机文案'}}
+      </view>
+    </view>
+    
+    <textarea 
+      class="text-input" 
+      placeholder="请输入或点击上方按钮获取随机文案" 
+      value="{{diaryText}}"
+      maxlength="-1"
+      bindinput="onTextInput"
+      auto-height
+    />
+    
+    <view class="text-counter">
+      <text>当前字数：{{textLength}}</text>
+      <text class="text-tip">提示：文字会自动换行，支持任意长度</text>
+    </view>
+  </view>
+  
+  <!-- 操作按钮 -->
+  <view class="action-section">
+    <button 
+      class="generate-btn" 
+      type="primary" 
+      bindtap="onGenerateImage"
+      disabled="{{!diaryText || isGenerating}}"
+      loading="{{isGenerating}}"
+    >
+      {{isGenerating ? '生成中...' : '生成图片'}}
+    </button>
+    
+    <view class="action-tip" wx:if="{{!diaryText}}">
+      <text>请输入或获取文案后生成图片</text>
+    </view>
+  </view>
+  
+  <!-- 隐藏的Canvas（用于绘制） -->
+  <canvas 
+    class="hidden-canvas" 
+    id="dogCanvas"
+    type="2d"
+    canvas-id="dogCanvas"
+    style="width: 660rpx; height: {{canvasHeight}}rpx;"
+  />
+</view>
