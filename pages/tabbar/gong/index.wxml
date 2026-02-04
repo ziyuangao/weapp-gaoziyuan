@@ -13,7 +13,7 @@
       >
         <!-- 图片区域 -->
         <view class="item-image-box">
-          <image class="item-image" src="{{item.icon}}" mode="aspectFit" />
+          <image class="item-image" src="{{'../'+item.icon}}" mode="aspectFit" />
         </view>
         
         <!-- 文字区域 -->

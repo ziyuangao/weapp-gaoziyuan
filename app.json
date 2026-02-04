@@ -8,7 +8,8 @@
     "pages/lol/index",
     "pages/lolDetail/index",
     "pages/bmi/index",
-    "pages/gas/index"
+    "pages/gas/index",
+    "pages/setting/index"
   ],
   "tabBar": {
     "list": [

@@ -1,24 +1,40 @@
 // pages/tabbar/gong/index.js
+const utils = require('../../../utils/util.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list:[
-      { path:'/pages/lol/index',title:'英雄联盟查询',subTitle:'皮肤查询',icon:'../../../assets/img/tabbar/lol.png'},
-      { path:'/pages/bmi/index',title:'身体指数计算',subTitle:'计算BMI值',icon:'../../../assets/img/tabbar/bmi.png'},
-      { path:'/pages/gas/index',title:'今日油价',subTitle:'全国各省油价查询',icon:'../../../assets/img/tabbar/gas.png'},
-    ]
+    defaultList:[
+      { path:'/pages/setting/index',title:'设置',subTitle:'菜单设置',icon:'../../assets/img/tabbar/setting.png'},
+    ],
+    list:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    this.getMenuList();
   },
-
+  getMenuList(){
+    const allRouterConfig = utils.allMenuList;
+    // 读取 storage 中是否存在历史配置 如果存在 沿用历史
+    const currentConfig =  wx.getStorageSync('routeConfig');
+    if(currentConfig && currentConfig.length){
+      const resultConfig = allRouterConfig.filter(item=>{
+        return currentConfig.some(i=>i == item.id)
+      })
+      this.setData({
+        list:[...resultConfig,...this.data.defaultList]
+      })
+    } else {
+      this.setData({
+        list:this.data.defaultList
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -26,12 +42,19 @@ Page({
 
   },
   onItemTap(e){
+    const _this = this;
     const path = e.target.dataset.path || e.currentTarget.dataset.path || ''
     if(!path){
       return
     }
     wx.navigateTo({
-      url:path
+      url:path,
+      events:{
+        // 监听配置页面发送的事件
+        menuConfigUpdated: () => {
+          _this.getMenuList();
+        }
+      }
     })
   },
 

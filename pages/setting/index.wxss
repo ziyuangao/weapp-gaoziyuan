@@ -1,0 +1,112 @@
+/* pages/menu-config/index.wxss */
+
+/* 页面容器 */
+.config-page {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+/* 提示信息 */
+.page-tip {
+  padding: 24rpx 32rpx;
+  font-size: 26rpx;
+  color: #666;
+  background-color: #f0f2f5;
+  line-height: 1.5;
+}
+
+/* 菜单配置列表 */
+.config-list {
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+
+/* 每个菜单项 */
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 28rpx 32rpx;
+  position: relative;
+}
+
+/* 分割线 - 带间距的短横线 */
+.menu-item::after {
+  content: '';
+  position: absolute;
+  left: 32rpx;
+  right: 32rpx;
+  bottom: 0;
+  height: 2rpx;
+  background-color: #f0f0f0;
+}
+
+.menu-item:last-child::after {
+  display: none;
+}
+
+/* 菜单图标 */
+.menu-icon {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 16rpx;
+  margin-right: 24rpx;
+  flex-shrink: 0;
+}
+
+/* 菜单文本区域 */
+.menu-info {
+  flex: 1;
+  min-width: 0; /* 防止文本溢出 */
+}
+
+.menu-title {
+  font-size: 32rpx;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 8rpx;
+  display: block;
+}
+
+.menu-subtitle {
+  font-size: 26rpx;
+  color: #888;
+  display: block;
+}
+
+/* 禁用状态的样式 */
+.menu-item.disabled .menu-title {
+  color: #999;
+}
+
+.menu-item.disabled .menu-subtitle {
+  color: #bbb;
+}
+
+/* 确认按钮区域 */
+.confirm-section {
+  position: fixed;
+  bottom: 160rpx;
+  left: 5%;
+  width: 90%;
+}
+
+.confirm-btn {
+  background-color: #07c160;
+  color: #fff;
+  border-radius: 50rpx;
+  font-size: 34rpx;
+  height: 90rpx;
+  line-height: 1.5;
+  text-align: center;
+  width: 100%!important;
+}
+
+.confirm-btn:active {
+  background-color: #06ad56;
+  opacity: 0.9;
+}
+
+.confirm-btn[disabled] {
+  background-color: #ddd;
+  color: #999;
+}

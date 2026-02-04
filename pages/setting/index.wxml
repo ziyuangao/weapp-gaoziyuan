@@ -1,0 +1,46 @@
+<!-- pages/menu-config/index.wxml -->
+<view class="config-page">
+  <!-- 页面提示 -->
+  <view class="page-tip">
+    请勾选您希望在首页显示的菜单项（至少选择一项）
+  </view>
+
+  <!-- 菜单配置列表 -->
+  <view class="config-list">
+    <checkbox-group bindchange="onMenuChange">
+      <view 
+        class="menu-item {{item.disabled ? 'disabled' : ''}}" 
+        wx:for="{{menuList}}" 
+        wx:key="id"
+      >
+        <!-- 菜单图标 -->
+        <image class="menu-icon" src="{{item.icon}}" mode="aspectFill"></image>
+        
+        <!-- 菜单文本 -->
+        <view class="menu-info">
+          <text class="menu-title">{{item.title}}</text>
+          <text class="menu-subtitle">{{item.subTitle}}</text>
+        </view>
+        
+        <!-- 复选框 -->
+        <checkbox 
+          value="{{item.id}}" 
+          checked="{{item.checked}}"
+          disabled="{{item.disabled}}"
+          color="#07c160"
+        />
+      </view>
+    </checkbox-group>
+  </view>
+
+  <!-- 确认按钮 -->
+  <view class="confirm-section">
+    <button 
+      class="confirm-btn" 
+      bindtap="onConfirm"
+      disabled="{{selectedCount === 0}}"
+    >
+      确认保存 (已选择 {{selectedCount}} 项)
+    </button>
+  </view>
+</view>
