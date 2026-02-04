@@ -20,6 +20,7 @@ const allMenuList = [
   { id: 3, path: '/pages/bmi/index', title: '身体指数计算', subTitle: '计算BMI值', icon: '../../assets/img/tabbar/bmi.png', disabled: false },
   { id: 4, path: '/pages/gas/index', title: '今日油价', subTitle: '全国各省油价查询', icon: '../../assets/img/tabbar/gas.png', disabled: false },
   { id: 5, path: '/pages/dog/index', title: '舔狗日记', subTitle: '痛并快乐着', icon: '../../assets/img/tabbar/dog.png', disabled: false },
+  { id: 6, path: '/pages/beautiful/index', title: '美女图片', subTitle: '只为心情愉悦', icon: '../../assets/img/tabbar/beautiful.png', disabled: false },
 ]
 
 module.exports = {

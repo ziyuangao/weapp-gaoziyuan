@@ -10,7 +10,8 @@
     "pages/bmi/index",
     "pages/gas/index",
     "pages/setting/index",
-    "pages/dog/index"
+    "pages/dog/index",
+    "pages/beautiful/index"
   ],
   "tabBar": {
     "list": [
