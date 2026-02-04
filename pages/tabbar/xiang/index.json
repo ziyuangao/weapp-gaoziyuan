@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "usingComponents": {},
+  "navigationBarTitleText": "免责声明",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#f5f7fa",
+  "enablePullDownRefresh": false
 }

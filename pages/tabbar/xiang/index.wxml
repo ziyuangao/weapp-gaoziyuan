@@ -1,2 +1,77 @@
-<!--pages/tabbar/xiang/index.wxml-->
-<text>pages/tabbar/xiang/index.wxml</text>
+<!-- pages/statement/index.wxml -->
+<view class="statement-page">
+  <!-- 顶部标题区 -->
+  <view class="header">
+    <view class="header-icon">📋</view>
+    <text class="header-title">使用说明与免责声明</text>
+    <text class="header-subtitle">请仔细阅读以下内容</text>
+  </view>
+
+  <!-- 主体内容卡片 -->
+  <view class="card">
+    <!-- 引言部分 -->
+    <view class="section">
+      <text class="section-text">你好，欢迎使用小原的百宝箱。</text>
+      <text class="section-text highlight">我的初衷很简单：做一个干干净净的小工具，方便自己，也方便朋友和家人。</text>
+      <text class="section-text">这里没有登录，没有广告，不会收集你的任何个人信息。</text>
+    </view>
+
+    <!-- 工具原理部分 -->
+    <view class="section">
+      <view class="section-title">⚙️ 关于工具的原理</view>
+      <text class="section-text">小程序里的功能，其数据均来自互联网上可靠的第三方公开接口。</text>
+      <text class="section-text emphasize">我本人并不生产或直接控制这些数据。</text>
+    </view>
+
+    <!-- 承诺与局限部分 -->
+    <view class="section">
+      <view class="section-title">🛡️ 我的承诺与局限</view>
+      <view class="promise-list">
+        <view class="promise-item">
+          <view class="promise-icon">✅</view>
+          <text class="promise-text">用心筛选：我会尽力选择稳定、健康的接口来源，并定期检查。</text>
+        </view>
+        <view class="promise-item">
+          <view class="promise-icon">✅</view>
+          <text class="promise-text">如实呈现：所有计算结果和获取的内容，我都会原样、清晰地展示给你，不做恶意篡改。</text>
+        </view>
+        <view class="promise-item">
+          <view class="promise-icon">⚠️</view>
+          <text class="promise-text">但请知悉：由于数据来自第三方，我无法 100% 保证其永远的准确性、及时性，也无法绝对防止其内容在未来发生不可预知的变化。</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 重要提醒部分 -->
+    <view class="section important-section">
+      <view class="section-title">📌 重要提醒：请你理解</view>
+      <view class="reminder-list">
+        <view class="reminder-item">
+          <view class="reminder-bullet">•</view>
+          <text class="reminder-text">本工具箱的所有功能，都仅供你在日常生活中参考和娱乐使用。</text>
+        </view>
+        <view class="reminder-item">
+          <view class="reminder-bullet">•</view>
+          <text class="reminder-text">任何计算结果（如BMI指数）或获取的内容，都不构成专业的医疗、财务或其他建议。</text>
+        </view>
+        <view class="reminder-item">
+          <view class="reminder-bullet">•</view>
+          <text class="reminder-text">对于你依据本工具信息所做的任何决定，我将不承担相关责任。</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 结尾部分 -->
+    <view class="section">
+      <view class="section-title">✨ 最后</view>
+      <text class="section-text">如果这个小工具偶尔帮到了你，我会很开心。如果你发现任何数据异常或令人不适的内容，非常欢迎你通过邮箱 ziyuan_gao@163.com 告诉我，我会第一时间核查处理。</text>
+      <text class="section-text thank-text">感谢你的使用和理解！</text>
+    </view>
+  </view>
+
+  <!-- 版本信息 -->
+  <view class="footer">
+    <text class="footer-text">生活工具箱 · 为你而做</text>
+    <text class="footer-version">版本 1.0.0</text>
+  </view>
+</view>
