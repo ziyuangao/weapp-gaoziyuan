@@ -1,0 +1,72 @@
+<!-- pages/oil-price/index.wxml -->
+<view class="oil-page">
+  <!-- 页面标题 -->
+  <view class="page-title">实时油价查询</view>
+  
+  <!-- 省份选择区域 -->
+  <view class="picker-section">
+    <view class="picker-label">选择省份</view>
+    <picker 
+      range="{{provinceList}}" 
+      value="{{provinceIndex}}" 
+      bindchange="onProvinceChange"
+      disabled="{{isLoading || provinceList.length === 0}}"
+    >
+      <view class="picker-display {{provinceIndex === -1 ? 'picker-placeholder' : ''}}">
+        {{provinceIndex === -1 ? '请选择省份' : provinceList[provinceIndex]}}
+      </view>
+    </picker>
+    <text class="picker-icon">▼</text>
+  </view>
+
+  <!-- 加载状态 -->
+  <view class="loading-section" wx:if="{{isLoading}}">
+    <view class="loading-spinner"></view>
+    <text class="loading-text">正在加载油价数据...</text>
+  </view>
+
+  <!-- 空状态/错误状态 -->
+  <view class="empty-section" wx:if="{{!isLoading && showEmpty}}">
+    <text class="empty-icon">⛽</text>
+    <text class="empty-text">{{emptyText}}</text>
+    <button 
+      class="retry-btn" 
+      bindtap="onRetry" 
+      wx:if="{{showRetry}}"
+    >重新加载</button>
+  </view>
+
+  <!-- 油价展示卡片 -->
+  <view class="price-card" wx:if="{{!isLoading && !showEmpty && currentDisplayData}}">
+    <!-- 省份标题 -->
+    <view class="province-header">
+      <text class="province-name">{{currentDisplayData.regionName}}</text>
+      <text class="price-date">{{currentDisplayData.date}}</text>
+    </view>
+
+    <!-- 油价列表 - 使用格式化后的数据 -->
+    <view class="price-list">
+      <view 
+        class="price-item" 
+        wx:for="{{currentDisplayData.oilItems}}" 
+        wx:key="type"
+      >
+        <text class="oil-type">{{item.type}}</text>
+        <view class="oil-price-area">
+          <text class="oil-price">{{item.price}}</text>
+          <text class="oil-change {{item.changeClass}}">{{item.changeText}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 价格说明 -->
+    <view class="price-note">
+      <text>价格单位：元/升 | 涨跌额为相比上次调整的变化</text>
+    </view>
+  </view>
+
+  <!-- 网络错误提示（轻提示） -->
+  <view class="toast-message" wx:if="{{showToast}}">
+    {{toastMessage}}
+  </view>
+</view>

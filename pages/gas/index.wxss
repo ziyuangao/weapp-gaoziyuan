@@ -1,0 +1,252 @@
+/* pages/oil-price/index.wxss */
+
+/* 页面容器 */
+.oil-page {
+  padding: 40rpx;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+  box-sizing: border-box;
+}
+
+/* 页面标题 */
+.page-title {
+  font-size: 42rpx;
+  font-weight: 600;
+  color: #2c3e50;
+  text-align: center;
+  margin: 30rpx 0 50rpx;
+  letter-spacing: 1rpx;
+}
+
+/* 省份选择区域 */
+.picker-section {
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 40rpx;
+  position: relative;
+  box-shadow: 0 8rpx 25rpx rgba(0, 0, 0, 0.05);
+  border: 2rpx solid #e8edf2;
+}
+
+.picker-label {
+  font-size: 28rpx;
+  color: #7f8c8d;
+  margin-bottom: 20rpx;
+  font-weight: 500;
+}
+
+.picker-display {
+  font-size: 36rpx;
+  color: #2c3e50;
+  padding: 25rpx 0;
+  min-height: 100rpx;
+  display: flex;
+  align-items: center;
+}
+
+.picker-placeholder {
+  color: #bdc3c7;
+}
+
+.picker-icon {
+  position: absolute;
+  right: 40rpx;
+  bottom: 50rpx;
+  font-size: 24rpx;
+  color: #3498db;
+  transform: scaleY(0.8);
+}
+
+/* 加载状态 */
+.loading-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100rpx 0;
+}
+
+.loading-spinner {
+  width: 80rpx;
+  height: 80rpx;
+  border: 6rpx solid #f0f2f5;
+  border-top: 6rpx solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 30rpx;
+}
+
+.loading-text {
+  font-size: 28rpx;
+  color: #7f8c8d;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 空状态/错误状态 */
+.empty-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120rpx 40rpx;
+  text-align: center;
+}
+
+.empty-icon {
+  font-size: 100rpx;
+  color: #bdc3c7;
+  margin-bottom: 30rpx;
+}
+
+.empty-text {
+  font-size: 32rpx;
+  color: #95a5a6;
+  margin-bottom: 40rpx;
+  line-height: 1.5;
+}
+
+.retry-btn {
+  background: #3498db;
+  color: white;
+  border-radius: 50rpx;
+  font-size: 30rpx;
+  padding: 20rpx 60rpx;
+  margin-top: 20rpx;
+}
+
+/* 油价卡片 */
+.price-card {
+  background: #fff;
+  border-radius: 20rpx;
+  overflow: hidden;
+  box-shadow: 0 15rpx 40rpx rgba(0, 0, 0, 0.08);
+  animation: cardAppear 0.5s ease-out;
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(30rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.province-header {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  padding: 40rpx 30rpx;
+  color: white;
+}
+
+.province-name {
+  font-size: 44rpx;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 10rpx;
+}
+
+.price-date {
+  font-size: 26rpx;
+  opacity: 0.9;
+}
+
+/* 油价列表 */
+.price-list {
+  padding: 10rpx 0;
+}
+
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx;
+  border-bottom: 2rpx solid #f5f7fa;
+  transition: background-color 0.2s;
+}
+
+.price-item:active {
+  background-color: #f9fbfd;
+}
+
+.price-item:last-child {
+  border-bottom: none;
+}
+
+.oil-type {
+  font-size: 32rpx;
+  color: #2c3e50;
+  font-weight: 500;
+  width: 180rpx;
+}
+
+.oil-price-area{
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.oil-price {
+  font-size: 34rpx;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.oil-change {
+  font-size: 28rpx;
+  margin-left: 10rpx;
+}
+
+/* 涨跌颜色 */
+.change-up {
+  color: #e54d42;
+}
+
+.change-down {
+  color: #07c160;
+}
+
+.change-neutral {
+  color: #95a5a6;
+}
+
+/* 价格说明 */
+.price-note {
+  padding: 25rpx 30rpx;
+  background: #f8f9fa;
+  border-top: 2rpx solid #edf1f5;
+}
+
+.price-note text {
+  font-size: 24rpx;
+  color: #7f8c8d;
+  display: block;
+  text-align: center;
+}
+
+/* 轻提示 */
+.toast-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(44, 62, 80, 0.9);
+  color: white;
+  padding: 25rpx 50rpx;
+  border-radius: 16rpx;
+  font-size: 30rpx;
+  z-index: 1000;
+  animation: toastFade 2.5s ease-in-out;
+}
+
+@keyframes toastFade {
+  0%, 100% { opacity: 0; }
+  20%, 80% { opacity: 1; }
+}

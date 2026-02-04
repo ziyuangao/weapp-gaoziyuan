@@ -23,11 +23,11 @@
     "miniprogram": {
       "list": [
         {
-          "name": "pages/bmi/index",
-          "pathName": "pages/bmi/index",
+          "name": "gas",
+          "pathName": "pages/gas/index",
           "query": "",
-          "launchMode": "default",
-          "scene": null
+          "scene": null,
+          "launchMode": "default"
         }
       ]
     }

@@ -7,7 +7,8 @@
     "pages/logs/logs",
     "pages/lol/index",
     "pages/lolDetail/index",
-    "pages/bmi/index"
+    "pages/bmi/index",
+    "pages/gas/index"
   ],
   "tabBar": {
     "list": [

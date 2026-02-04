@@ -1,0 +1,8 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "油价查询",
+  "navigationBarBackgroundColor": "#3498db",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#f5f7fa",
+  "enablePullDownRefresh": false
+}
