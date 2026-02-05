@@ -1,6 +1,9 @@
 <view class="page-container">
   <!-- 白色内容区域 -->
   <view class="content-area">
+    <view class="daily-notice" wx:if="{{showDailyNotice}}">
+      <text class="notice-text">{{dailyNoticeText}}</text>
+    </view>
     <!-- 项目列表 - 横向3个一直往下排列 -->
     <view class="item-list">
       <view 

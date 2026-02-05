@@ -3,8 +3,6 @@
     "pages/tabbar/gong/index",
     "pages/tabbar/ju/index",
     "pages/tabbar/xiang/index",
-    "pages/index/index",
-    "pages/logs/logs",
     "pages/lol/index",
     "pages/lolDetail/index",
     "pages/bmi/index",

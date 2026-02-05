@@ -99,3 +99,51 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+
+.daily-notice {
+  background-color: #fffbe6; /* 浅黄色背景 */
+  color: #8a6d3b;           /* 深黄色文字 */
+  padding: 0rpx 15rpx;
+  border-radius: 12rpx;
+  margin-bottom: 30rpx;
+  border-left: 8rpx solid #faad14; /* 左侧装饰条 */
+  position: relative;
+  overflow: hidden; /* 关键：隐藏超出部分 */
+  white-space: nowrap; /* 关键：文字不换行 */
+  box-shadow: 0 2rpx 8rpx rgba(250, 173, 20, 0.1);
+  
+  /* 设置一个固定高度，避免内容闪烁 */
+  min-height: 80rpx;
+  display: flex;
+  align-items: center;
+}
+
+/* 滚动文字容器 */
+.notice-text {
+  display: inline-block;
+  font-size: 28rpx;
+  line-height: 1.4;
+  padding-left: 100%; /* 初始位置在容器右侧外 */
+  animation: notice-scroll 8s linear forwards;/* 10秒动画，结束后保持最后一帧 */
+}
+
+/* 定义滚动动画 */
+@keyframes notice-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%); /* 向左移动自身100%宽度 */
+  }
+}
+
+/* 为滚动结束添加淡出效果（可选） */
+.daily-notice {
+  animation: notice-fade-out 0.5s ease 8s forwards; /* 在5秒后开始淡出 */
+}
+
+@keyframes notice-fade-out {
+  0% { opacity: 1; }
+  100% { opacity: 0; max-height: 0; padding: 0; margin: 0; overflow: hidden; }
+}
