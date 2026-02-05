@@ -37,8 +37,13 @@ Page({
         date: '',
         explanation: '',
         copyright: '',
-        url: ''
-      }
+        url: '',
+      },
+      showChinese: false,
+      translatedText: '',
+      isTranslating: false,
+      hasTranslated: false,
+      isLoading: false
     });
     
     wx.request({
@@ -60,13 +65,12 @@ Page({
               date: resData.date || '',
               explanation: resData.explanation || '',
               copyright: resData.copyright || '',
-              url: resData.url || '',
-              showChinese: false,
-              translatedText: '',
-              isTranslating: false,
-              hasTranslated: false,
-              isLoading: false
+              url: resData.url || ''
             },
+            showChinese: false,
+            translatedText: '',
+            isTranslating: false,
+            hasTranslated: false,
             isLoading: false
           });
           // 注意：isImageLoading 状态由 bindload 事件控制
