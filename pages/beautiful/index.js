@@ -148,7 +148,7 @@ Page({
   startCoolingTimer() {
     this.setData({
       isCooling: true,
-      coolingTime: 3
+      coolingTime: 1
     });
     
     const timer = setInterval(() => {
