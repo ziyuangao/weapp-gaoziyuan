@@ -21,7 +21,7 @@ Page({
     
     // 冷却状态
     isCooling: false,         // 是否处于冷却中
-    coolingTime: 3,           // 冷却时间(秒)
+    coolingTime: 1,           // 冷却时间(秒)
     coolingTimer: null,       // 冷却计时器
     
     // 统计
