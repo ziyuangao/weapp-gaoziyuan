@@ -1,0 +1,65 @@
+<!-- pages/hot-board/index.wxml -->
+<view class="page">
+  <!-- 标题区 -->
+  <view class="header">
+    <text class="title">📈 全网热榜聚合</text>
+    <text class="subtitle">选择平台，一览热点</text>
+  </view>
+
+  <!-- 平台选择器 -->
+  <view class="picker-section">
+    <view class="picker-label">选择平台</view>
+    <picker 
+      mode="multiSelector" 
+      range="{{pickerRange}}" 
+      value="{{pickerValue}}"
+      bindchange="onPickerChange"
+      bindcolumnchange="onPickerColumnChange"
+      disabled="{{isLoading}}"
+    >
+      <view class="picker-display">
+        {{selectedCategory && selectedPlatform ? 
+          selectedCategory + ' - ' + selectedPlatform : 
+          '请选择平台'}}
+      </view>
+    </picker>
+  </view>
+
+  <!-- 加载状态 -->
+  <view class="loading-section" wx:if="{{isLoading}}">
+    <view class="loading-spinner"></view>
+    <text class="loading-text">正在加载热榜...</text>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty-section" wx:if="{{!isLoading && showEmpty}}">
+    <text class="empty-icon">📭</text>
+    <text class="empty-text">当前热榜暂无数据</text>
+  </view>
+
+  <!-- 热榜列表 -->
+  <scroll-view 
+    class="list-section" 
+    scroll-y 
+    wx:if="{{!isLoading && !showEmpty && listData.length > 0}}"
+  >
+    <view class="list-header">
+      <text class="list-title">{{selectedPlatform}} 热榜</text>
+      <text class="update-time" wx:if="{{updateTime}}">更新于 {{updateTime}}</text>
+    </view>
+    
+    <view class="list-content">
+      <view 
+        class="list-item" 
+        wx:for="{{listData}}" 
+        wx:key="index"
+        data-index="{{index}}"
+        bindtap="onItemTap"
+        data-url="{{item.url}}"
+      >
+        <text class="item-index">{{index + 1}}</text>
+        <text class="item-title">{{item.title}}</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>

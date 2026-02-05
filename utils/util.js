@@ -23,6 +23,7 @@ const allMenuList = [
   { id: 6, path: '/pages/beautiful/index', title: '美女图片', subTitle: '只为心情愉悦', icon: '../../assets/img/tabbar/beautiful.png', disabled: false },
   { id: 7, path: '/pages/playboy/index', title: '花花公子', subTitle: '仅供测试', icon: '../../assets/img/tabbar/playboy.png', disabled: false },
   { id: 8, path: '/pages/book/index', title: '答案之书', subTitle: '简直不敢相信', icon: '../../assets/img/tabbar/book.png', disabled: false },
+  { id: 9, path: '/pages/news/index', title: '每日热榜', subTitle: '每5分钟更新', icon: '../../assets/img/tabbar/news.png', disabled: false },
 ]
 
 module.exports = {

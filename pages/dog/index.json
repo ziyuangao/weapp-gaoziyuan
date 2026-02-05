@@ -1,8 +1,4 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "舔狗日记生成器",
-  "navigationBarBackgroundColor": "#ffffff",
-  "navigationBarTextStyle": "black",
-  "backgroundColor": "#f8f9fa",
-  "enablePullDownRefresh": false
+  "navigationBarTitleText": "舔狗日记生成器"
 }

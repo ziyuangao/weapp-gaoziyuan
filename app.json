@@ -13,7 +13,8 @@
     "pages/dog/index",
     "pages/beautiful/index",
     "pages/playboy/index",
-    "pages/book/index"
+    "pages/book/index",
+    "pages/news/index"
   ],
   "tabBar": {
     "list": [

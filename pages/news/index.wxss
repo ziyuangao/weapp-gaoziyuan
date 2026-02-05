@@ -1,0 +1,162 @@
+/* pages/hot-board/index.wxss */
+.page {
+  padding: 20rpx;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+  box-sizing: border-box;
+}
+
+/* 标题区 */
+.header {
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+
+.title {
+  display: block;
+  font-size: 42rpx;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 10rpx;
+}
+
+.subtitle {
+  font-size: 26rpx;
+  color: #7f8c8d;
+}
+
+/* 平台选择器 */
+.picker-section {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 8rpx 25rpx rgba(0, 0, 0, 0.05);
+}
+
+.picker-label {
+  font-size: 28rpx;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+.picker-display {
+  font-size: 34rpx;
+  color: #2c3e50;
+  padding: 25rpx 0;
+  min-height: 100rpx;
+  display: flex;
+  align-items: center;
+}
+
+/* 加载状态 */
+.loading-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100rpx 0;
+}
+
+.loading-spinner {
+  width: 80rpx;
+  height: 80rpx;
+  border: 6rpx solid #f0f2f5;
+  border-top: 6rpx solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 30rpx;
+}
+
+.loading-text {
+  font-size: 28rpx;
+  color: #7f8c8d;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 空状态 */
+.empty-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120rpx 40rpx;
+  text-align: center;
+}
+
+.empty-icon {
+  font-size: 100rpx;
+  color: #bdc3c7;
+  margin-bottom: 30rpx;
+}
+
+.empty-text {
+  font-size: 32rpx;
+  color: #95a5a6;
+}
+
+/* 热榜列表 */
+.list-section {
+  background: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0 10rpx 40rpx rgba(0, 0, 0, 0.08);
+  max-height: 70vh;
+}
+
+.list-header {
+  padding: 30rpx 30rpx 20rpx;
+  border-bottom: 2rpx solid #f5f7fa;
+}
+
+.list-title {
+  font-size: 34rpx;
+  color: #2c3e50;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 10rpx;
+}
+
+.update-time {
+  font-size: 24rpx;
+  color: #95a5a6;
+}
+
+.list-content {
+  padding: 10rpx 0;
+}
+
+.list-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 28rpx 30rpx;
+  border-bottom: 1rpx solid #f5f7fa;
+  transition: background-color 0.2s;
+}
+
+.list-item:active {
+  background-color: #f9fbfd;
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.item-index {
+  font-size: 32rpx;
+  color: #3498db;
+  font-weight: 600;
+  width: 80rpx;
+  flex-shrink: 0;
+  margin-top: 4rpx;
+}
+
+.item-title {
+  font-size: 30rpx;
+  color: #2c3e50;
+  line-height: 1.5;
+  flex: 1;
+}
