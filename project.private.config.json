@@ -18,16 +18,23 @@
     "checkInvalidKey": true,
     "ignoreDevUnusedFiles": true
   },
-  "libVersion": "3.13.2",
+  "libVersion": "3.14.1",
   "condition": {
     "miniprogram": {
       "list": [
         {
-          "name": "舔狗日记",
-          "pathName": "pages/dog/index",
+          "name": "playboy",
+          "pathName": "pages/playboy/index",
           "query": "",
           "scene": null,
           "launchMode": "default"
+        },
+        {
+          "name": "舔狗日记",
+          "pathName": "pages/dog/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

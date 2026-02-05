@@ -6,7 +6,7 @@ Page({
       'https://v2.xxapi.cn/api/meinvpic',
       'https://v2.xxapi.cn/api/heisi',
       'https://v2.xxapi.cn/api/baisi',
-      'https://v2.xxapi.cn/api/randomAcgPic',
+      'https://v2.xxapi.cn/api/randomAcgPic?type=wap',
       'https://v2.xxapi.cn/api/jk',
       'https://v2.xxapi.cn/api/yscos',
       'https://v2.xxapi.cn/api/wapmeinvpic',

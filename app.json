@@ -11,7 +11,8 @@
     "pages/gas/index",
     "pages/setting/index",
     "pages/dog/index",
-    "pages/beautiful/index"
+    "pages/beautiful/index",
+    "pages/playboy/index"
   ],
   "tabBar": {
     "list": [

@@ -15,7 +15,7 @@
     </view>
     <!-- 图片 -->
     <image 
-      wx:if="{{!isLoading && currentImageUrl && !isError}}"
+      wx:if="{{ currentImageUrl && !isError}}"
       src="{{currentImageUrl}}" 
       mode="aspectFill"
       class="main-image"

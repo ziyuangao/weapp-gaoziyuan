@@ -1,0 +1,42 @@
+<!-- pages/playboy/index.wxml -->
+<view class="page-container">
+  <!-- 主视频区域 -->
+  <video
+    id="mainVideo"
+    src="{{videoUrl}}"
+    autoplay
+    controls
+    object-fit="cover"
+    binderror="onVideoError"
+    bindended="onVideoEnded"
+    bindtouchstart="onTouchStart"
+    bindtouchend="onTouchEnd"
+    wx:if="{{videoUrl}}"
+    class="main-video"
+  />
+
+  <view class="swipe-guide" wx:if="{{showSwipeGuide}}">
+    <text class="guide-text">↑ 上滑切换视频</text>
+  </view>
+
+  <!-- 接口错误/重试层 -->
+  <view class="error-layer" wx:if="{{showErrorRetry}}">
+    <view class="error-content">
+      <text class="error-text">视频获取失败</text>
+      <button class="retry-btn" bindtap="onRetryTap">重试一下</button>
+    </view>
+  </view>
+
+  <!-- 加载提示层 -->
+  <view class="loading-layer" wx:if="{{isLoading}}">
+    <view class="loading-content">
+      <view class="loading-spinner"></view>
+      <text class="loading-text">视频加载中...</text>
+    </view>
+  </view>
+
+  <!-- 操作频繁提示 -->
+  <view class="toast-layer" wx:if="{{showCoolingToast}}">
+    <text class="toast-text">操作频繁，请稍候 ({{coolingTime}}s)</text>
+  </view>
+</view>
