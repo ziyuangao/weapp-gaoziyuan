@@ -22,6 +22,7 @@ const allMenuList = [
   { id: 5, path: '/pages/dog/index', title: '舔狗日记', subTitle: '痛并快乐着', icon: '../../assets/img/tabbar/dog.png', disabled: false },
   { id: 6, path: '/pages/beautiful/index', title: '美女图片', subTitle: '只为心情愉悦', icon: '../../assets/img/tabbar/beautiful.png', disabled: false },
   { id: 7, path: '/pages/playboy/index', title: '花花公子', subTitle: '仅供测试', icon: '../../assets/img/tabbar/playboy.png', disabled: false },
+  { id: 8, path: '/pages/book/index', title: '答案之书', subTitle: '简直不敢相信', icon: '../../assets/img/tabbar/book.png', disabled: false },
 ]
 
 module.exports = {

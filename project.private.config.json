@@ -23,11 +23,18 @@
     "miniprogram": {
       "list": [
         {
-          "name": "playboy",
-          "pathName": "pages/playboy/index",
+          "name": "答案之书",
+          "pathName": "pages/book/index",
           "query": "",
           "scene": null,
           "launchMode": "default"
+        },
+        {
+          "name": "playboy",
+          "pathName": "pages/playboy/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         },
         {
           "name": "舔狗日记",

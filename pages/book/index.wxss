@@ -1,0 +1,183 @@
+/* pages/answer-book/index.wxss */
+.answer-page {
+  padding: 40rpx;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+  box-sizing: border-box;
+}
+
+/* 标题 */
+.page-title {
+  font-size: 44rpx;
+  font-weight: 700;
+  color: #2c3e50;
+  text-align: center;
+  margin: 30rpx 0 15rpx;
+}
+
+.page-subtitle {
+  font-size: 26rpx;
+  color: #7f8c8d;
+  text-align: center;
+  margin-bottom: 50rpx;
+}
+
+/* 输入区域 */
+.input-section {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin-bottom: 40rpx;
+  box-shadow: 0 8rpx 25rpx rgba(0, 0, 0, 0.05);
+}
+
+.question-input {
+  width: 100%;
+  min-height: 180rpx;
+  font-size: 30rpx;
+  line-height: 1.5;
+  color: #2c3e50;
+  padding: 20rpx;
+  border: 2rpx solid #e8edf2;
+  border-radius: 16rpx;
+  box-sizing: border-box;
+  background: #fafbfc;
+}
+
+.question-input:focus {
+  border-color: #3498db;
+  background: #fff;
+}
+
+.input-counter {
+  text-align: right;
+  font-size: 24rpx;
+  color: #95a5a6;
+  margin-top: 15rpx;
+}
+
+/* 提交按钮 */
+.submit-btn {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  border-radius: 50rpx;
+  font-size: 34rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin: 30rpx 0 50rpx;
+  box-shadow: 0 10rpx 25rpx rgba(52, 152, 219, 0.3);
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.submit-btn:active {
+  transform: translateY(2rpx);
+  box-shadow: 0 5rpx 15rpx rgba(52, 152, 219, 0.3);
+}
+
+.submit-btn[disabled] {
+  background: linear-gradient(135deg, #bdc3c7, #95a5a6);
+  box-shadow: none;
+}
+
+/* 卡片通用样式 */
+.card {
+  background: #fff;
+  border-radius: 24rpx;
+  overflow: hidden;
+  box-shadow: 0 15rpx 40rpx rgba(0, 0, 0, 0.08);
+  animation: cardAppear 0.5s ease-out;
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(30rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 答案卡片 */
+.card-header {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  padding: 30rpx;
+}
+
+.card-title {
+  font-size: 32rpx;
+  color: #fff;
+  font-weight: 600;
+}
+
+.card-content {
+  padding: 40rpx;
+}
+
+.question-display, .answer-display {
+  margin-bottom: 35rpx;
+}
+
+.question-display:last-child, .answer-display:last-child {
+  margin-bottom: 0;
+}
+
+.label {
+  display: block;
+  font-size: 26rpx;
+  color: #7f8c8d;
+  margin-bottom: 10rpx;
+  font-weight: 500;
+}
+
+.content {
+  display: block;
+  font-size: 32rpx;
+  color: #2c3e50;
+  line-height: 1.5;
+}
+
+.highlight {
+  color: #e74c3c;
+  font-weight: 600;
+  font-size: 36rpx;
+}
+
+.card-footer {
+  padding: 25rpx 40rpx;
+  background: #f8f9fa;
+  border-top: 2rpx solid #edf1f5;
+}
+
+.hint {
+  font-size: 24rpx;
+  color: #95a5a6;
+  display: block;
+  text-align: center;
+}
+
+/* 占位卡片 */
+.placeholder-card {
+  background: #f8f9fa;
+  border: 2rpx dashed #dce1e6;
+}
+
+.placeholder-card .card-content {
+  padding: 80rpx 40rpx;
+  text-align: center;
+}
+
+.placeholder-text {
+  display: block;
+  font-size: 28rpx;
+  color: #95a5a6;
+  margin-bottom: 30rpx;
+}
+
+.placeholder-icon {
+  font-size: 80rpx;
+  display: block;
+  opacity: 0.5;
+}
