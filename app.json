@@ -12,7 +12,8 @@
     "pages/beautiful/index",
     "pages/playboy/index",
     "pages/book/index",
-    "pages/news/index"
+    "pages/news/index",
+    "pages/nasa/index"
   ],
   "tabBar": {
     "list": [

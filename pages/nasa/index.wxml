@@ -1,0 +1,75 @@
+<!-- pages/nasa-apod/index.wxml -->
+<view class="page">
+  <!-- 顶部标题 -->
+  <view class="header">
+    <text class="title">🌌 NASA 每日天文图</text>
+    <text class="subtitle">探索宇宙的奥秘</text>
+  </view>
+
+  <!-- 主卡片 -->
+  <view class="card" wx:if="{{imageData.title}}">
+    <!-- 图片区域 -->
+    <view class="image-container">
+      <image 
+        src="{{imageData.url}}" 
+        mode="widthFix"
+        binderror="onImageError"
+        bindload="onImageLoad"
+        class="main-image"
+      />
+      <!-- 加载遮罩 -->
+      <view class="image-loading" wx:if="{{isImageLoading}}">
+        <view class="loading-spinner"></view>
+        <text class="loading-text">图片加载中...</text>
+      </view>
+    </view>
+
+    <!-- 信息区域 -->
+    <view class="info-section">
+      <view class="info-header">
+        <text class="image-title">{{imageData.title}}</text>
+        <view class="image-subtitle">
+          <text class="image-date">{{imageData.date}}</text>
+          <view class="translate-btn" bindtap="onToggleTranslate">
+            {{showChinese ? 'en' : 'zh'}}
+          </view>
+        </view>
+      </view>
+
+      <view class="info-content">
+        <text class="explanation" wx:if="{{!showChinese}}">{{imageData.explanation}}</text>
+        <text class="explanation" wx:if="{{showChinese}}">{{translatedText || '翻译中...'}}</text>
+      </view>
+
+      <view class="info-footer" wx:if="{{imageData.copyright}}">
+        <text class="copyright">© {{imageData.copyright}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 加载状态 -->
+  <view class="loading-page" wx:if="{{isLoading && !imageData.title}}">
+    <view class="page-spinner"></view>
+    <text class="page-loading-text">正在获取今日天文图...</text>
+  </view>
+
+  <!-- 操作按钮 -->
+  <view class="action-section">
+    <view 
+      class="action-btn" 
+      bindtap="fetchImage"
+      disabled="{{isLoading || isImageLoading}}"
+      loading="{{isLoading}}"
+    >
+      {{isLoading ? '获取中...' : '🔄 换一张天文图'}}
+    </view>
+    <view class="action-tip" wx:if="{{isImageLoading}}">
+      图片加载完成后可切换
+    </view>
+  </view>
+
+  <!-- 数据来源说明 -->
+  <view class="footer">
+    <text>数据来源：NASA Astronomy Picture of the Day API</text>
+  </view>
+</view>

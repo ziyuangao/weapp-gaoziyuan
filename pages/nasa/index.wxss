@@ -1,0 +1,230 @@
+/* pages/nasa-apod/index.wxss */
+.page {
+  padding: 30rpx;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+  color: #e0e1dd;
+  box-sizing: border-box;
+}
+
+/* 头部 */
+.header {
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+
+.title {
+  display: block;
+  font-size: 44rpx;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10rpx;
+}
+
+.subtitle {
+  font-size: 26rpx;
+  color: #778da9;
+}
+
+/* 主卡片 */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 24rpx;
+  overflow: hidden;
+  margin-bottom: 40rpx;
+  backdrop-filter: blur(10px);
+  border: 1rpx solid rgba(255, 255, 255, 0.1);
+}
+
+/* 图片区域 */
+.image-container {
+  position: relative;
+  background: #000;
+  min-height: 400rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-image {
+  width: 100%;
+  display: block;
+}
+
+.image-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-spinner {
+  width: 60rpx;
+  height: 60rpx;
+  border: 4rpx solid rgba(255, 255, 255, 0.3);
+  border-top: 4rpx solid #415a77;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20rpx;
+}
+
+.loading-text {
+  color: #fff;
+  font-size: 26rpx;
+}
+
+/* 信息区域 */
+.info-section {
+  padding: 40rpx;
+}
+
+.info-header {
+  margin-bottom: 30rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid rgba(255, 255, 255, 0.1);
+}
+
+.date-translate-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15rpx;
+}
+
+.translate-btn {
+  display: block;
+  font-size: 24rpx;
+  color: #778da9;
+  border: 1rpx solid #778da9;
+  border-radius: 30rpx;
+  padding: 4rpx 16rpx;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.translate-btn:active {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.image-title {
+  display: block;
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10rpx;
+  line-height: 1.4;
+}
+
+.image-subtitle{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.image-date {
+  font-size: 26rpx;
+  color: #778da9;
+}
+
+.info-content {
+  margin-bottom: 30rpx;
+}
+
+.explanation {
+  font-size: 28rpx;
+  line-height: 1.6;
+  color: #e0e1dd;
+  display: block;
+  text-align: justify;
+}
+
+.info-footer {
+  padding-top: 20rpx;
+  border-top: 1rpx solid rgba(255, 255, 255, 0.1);
+}
+
+.copyright {
+  font-size: 24rpx;
+  color: #778da9;
+  font-style: italic;
+}
+
+/* 页面加载状态 */
+.loading-page {
+  padding: 100rpx 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-spinner {
+  width: 80rpx;
+  height: 80rpx;
+  border: 6rpx solid rgba(255, 255, 255, 0.3);
+  border-top: 6rpx solid #415a77;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 30rpx;
+}
+
+.page-loading-text {
+  font-size: 28rpx;
+  color: #778da9;
+}
+
+/* 操作区域 */
+.action-section {
+  padding: 30rpx 0;
+  text-align: center;
+}
+
+.action-btn {
+  background: linear-gradient(135deg, #415a77, #778da9);
+  color: white;
+  border-radius: 50rpx;
+  font-size: 32rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  border: none;
+  box-shadow: 0 8rpx 20rpx rgba(65, 90, 119, 0.3);
+}
+
+.action-btn[disabled] {
+  background: linear-gradient(135deg, #2d3746, #4a5568);
+  opacity: 0.7;
+}
+
+.action-tip {
+  font-size: 24rpx;
+  color: #778da9;
+  margin-top: 20rpx;
+}
+
+/* 页脚 */
+.footer {
+  text-align: center;
+  padding: 30rpx 0;
+  border-top: 1rpx solid rgba(255, 255, 255, 0.1);
+  margin-top: 20rpx;
+}
+
+.footer text {
+  font-size: 22rpx;
+  color: #778da9;
+  display: block;
+}
+
+/* 动画 */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
