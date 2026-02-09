@@ -13,7 +13,8 @@
     "pages/playboy/index",
     "pages/book/index",
     "pages/news/index",
-    "pages/nasa/index"
+    "pages/nasa/index",
+    "pages/mlocation/index"
   ],
   "tabBar": {
     "list": [

@@ -4,7 +4,7 @@
 .config-page {
   min-height: 100vh;
   background-color: #f8f9fa;
-  padding-bottom: 30rpx;
+  padding-bottom: 80rpx;
 }
 
 /* 提示信息 */
@@ -86,7 +86,7 @@
 /* 确认按钮区域 */
 .confirm-section {
   width: 90%;
-  margin: 30rpx auto;
+  margin: 50rpx auto 30rpx;
 }
 
 .confirm-btn {

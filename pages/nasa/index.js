@@ -1,4 +1,5 @@
 // pages/nasa-apod/index.js
+const utils = require('../../utils/util.js');
 Page({
   data: {
     // 图片数据
@@ -50,7 +51,7 @@ Page({
       url: 'https://api.nasa.gov/planetary/apod',
       method: 'GET',
       data: {
-        api_key: 'bk7cmikZlarglbnLpJxMYGhnwXhXFnxrkbactvmJ',
+        api_key: utils.NASA_KEY,
         count:1,
       },
       success: (res) => {

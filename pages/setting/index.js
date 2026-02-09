@@ -77,7 +77,6 @@ Page({
       selectedIds
     });
   },
-
   // 确认保存
   onConfirm() {
     // 1. 验证至少选择一项
@@ -98,7 +97,12 @@ Page({
       wx.showToast({
         title: '保存成功',
         icon: 'success',
-        duration: 1500
+        duration: 1300,
+        success(){
+          setTimeout(() => {
+            wx.navigateBack();
+          }, 1500);
+        }
       });
       
       // 4. 获取页面栈并调用首页的更新方法
@@ -114,7 +118,6 @@ Page({
       
       // 5. 可选：记录日志
       console.log('菜单配置已保存:', this.data.selectedIds);
-      
     } catch (error) {
       wx.showToast({
         title: '保存失败，请重试',
