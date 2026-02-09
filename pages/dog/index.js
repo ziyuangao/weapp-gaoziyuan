@@ -54,7 +54,9 @@ Page({
     const text = e.detail.value;
     this.setData({
       diaryText: text,
-      textLength: text.length
+      textLength: text.length,
+      generatedImagePath:"",
+      canvasHeight:1000
     });
   },
 
@@ -62,7 +64,11 @@ Page({
   async onRandomText() {
     if (this.data.isLoadingRandom) return;
     
-    this.setData({ isLoadingRandom: true });
+    this.setData({ 
+      isLoadingRandom: true,
+      generatedImagePath:"",
+      canvasHeight:1000
+    });
     
     try {
       const res = await new Promise((resolve, reject) => {
