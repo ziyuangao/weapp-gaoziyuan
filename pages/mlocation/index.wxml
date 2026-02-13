@@ -1,2 +1,58 @@
-<!--pages/mlocation/index.wxml-->
-<text>pages/mlocation/index.wxml</text>
+<!-- pages/phone-info/index.wxml -->
+<view class="page">
+  <!-- 页面标题 -->
+  <view class="header">
+    <text class="title">📱 手机归属地查询</text>
+    <text class="subtitle">输入手机号，快速识别来源</text>
+  </view>
+
+  <!-- 输入卡片 -->
+  <view class="input-card">
+    <view class="input-wrapper">
+      <input 
+        class="phone-input" 
+        type="number" 
+        placeholder="请输入11位手机号码" 
+        placeholder-class="placeholder"
+        value="{{phoneNumber}}"
+        bindinput="onPhoneInput"
+        maxlength="11"
+        disabled="{{isQuerying}}"
+      />
+      <view class="input-divider" wx:if="{{phoneNumber.length > 0}}"></view>
+      <view class="input-length" wx:if="{{phoneNumber.length > 0}}">
+        {{phoneNumber.length}}/11
+      </view>
+    </view>
+    
+    <!-- 查询按钮 -->
+    <view 
+      class="query-btn {{isBtnValid ? 'active' : ''}}" 
+      bindtap="onQuery"
+      disabled="{{!isBtnValid || isQuerying}}"
+      loading="{{isQuerying}}"
+    >
+      {{isQuerying ? '查询中...' : '查 询'}}
+    </view>
+  </view>
+
+  <!-- 结果卡片 -->
+  <view class="result-card" wx:if="{{showResult}}">
+    <view class="result-item location">
+      <text class="result-icon">📍</text>
+      <text class="result-label">归属地</text>
+      <text class="result-value">{{locationText}}</text>
+    </view>
+    <view class="result-divider"></view>
+    <view class="result-item carrier">
+      <text class="result-icon">📶</text>
+      <text class="result-label">运营商</text>
+      <text class="result-value">{{carrierText}}</text>
+    </view>
+  </view>
+
+  <!-- 使用说明 -->
+  <view class="footer">
+    <text class="footer-text">数据来源：uapis.cn · 仅作参考</text>
+  </view>
+</view>

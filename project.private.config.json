@@ -23,11 +23,18 @@
     "miniprogram": {
       "list": [
         {
-          "name": "答案之书",
-          "pathName": "pages/book/index",
+          "name": "手机归属地查询",
+          "pathName": "pages/mlocation/index",
           "query": "",
           "scene": null,
           "launchMode": "default"
+        },
+        {
+          "name": "答案之书",
+          "pathName": "pages/book/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         },
         {
           "name": "playboy",

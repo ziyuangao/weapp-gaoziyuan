@@ -95,7 +95,6 @@
   border-radius: 50rpx;
   font-size: 34rpx;
   height: 90rpx;
-  line-height: 1.5;
   text-align: center;
   width: 100%!important;
 }

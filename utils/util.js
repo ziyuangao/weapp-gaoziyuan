@@ -3,6 +3,7 @@ const NASA_KEY = "bk7cmikZlarglbnLpJxMYGhnwXhXFnxrkbactvmJ";
 // 聚合数据 接口需要的key
 const JUHE_KEY = "";
 const allMenuList = [
+  { id: 1, path: '/pages/mlocation/index', title: '手机归属地', subTitle: '归属地查询', icon: '../../assets/img/tabbar/mlocation.png', disabled: false },
   { id: 2, path: '/pages/lol/index', title: '英雄联盟查询', subTitle: '皮肤查询', icon: '../../assets/img/tabbar/lol.png', disabled: false },
   { id: 3, path: '/pages/bmi/index', title: '身体指数计算', subTitle: '计算BMI值', icon: '../../assets/img/tabbar/bmi.png', disabled: false },
   { id: 4, path: '/pages/gas/index', title: '今日油价', subTitle: '全国各省油价查询', icon: '../../assets/img/tabbar/gas.png', disabled: false },
