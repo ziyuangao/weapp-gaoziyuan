@@ -1,0 +1,233 @@
+/* pages/white-noise/index.wxss */
+.page {
+  min-height: 100vh;
+  background: linear-gradient(145deg, #0B1A2E 0%, #1A2A3A 100%);
+  padding: 40rpx 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  color: #E6E6E6;
+}
+
+/* 标题区 */
+.title-section {
+  margin-bottom: 60rpx;
+  text-align: center;
+}
+
+.title {
+  display: block;
+  font-size: 48rpx;
+  font-weight: 600;
+  color: #D4C5A1;
+  margin-bottom: 12rpx;
+  letter-spacing: 4rpx;
+  text-shadow: 0 2rpx 10rpx rgba(212, 197, 161, 0.2);
+}
+
+.subtitle {
+  display: block;
+  font-size: 26rpx;
+  color: #A0B3C5;
+  opacity: 0.8;
+}
+
+/* Swiper 卡片区 */
+.swiper-section {
+  margin-bottom: 80rpx;
+  height: 420rpx;
+}
+
+.card-swiper {
+  height: 100%;
+}
+
+.sound-card {
+  background: rgba(30, 45, 60, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 32rpx;
+  padding: 60rpx 30rpx;
+  box-shadow: 0 20rpx 40rpx rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2rpx solid rgba(212, 197, 161, 0.1);
+  transition: all 0.3s ease;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.sound-card.active {
+  background: rgba(45, 65, 85, 0.8);
+  border-color: rgba(212, 197, 161, 0.4);
+  box-shadow: 0 20rpx 60rpx rgba(123, 167, 192, 0.2);
+  transform: scale(1.02);
+}
+
+.sound-title {
+  font-size: 52rpx;
+  font-weight: 600;
+  color: #D4C5A1;
+  margin-bottom: 20rpx;
+  text-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.3);
+}
+
+.sound-desc {
+  font-size: 26rpx;
+  color: #A0B3C5;
+}
+
+/* 控制行 - 三个按钮一排 */
+.control-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20rpx;
+  margin-bottom: 60rpx;
+}
+
+/* 播放按钮 */
+.play-btn {
+  flex: 1;
+  background: linear-gradient(145deg, #2D4A5A, #1E3645);
+  border-radius: 60rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  color: #E6E6E6;
+  border: none;
+  box-shadow: 0 10rpx 20rpx rgba(0, 0, 0, 0.3);
+  margin: 0;
+  padding: 0;
+  transition: all 0.2s;
+}
+
+.play-btn.playing {
+  background: linear-gradient(145deg, #3D6A7A, #2D4A5A);
+  color: #D4C5A1;
+}
+
+.play-btn[disabled] {
+  opacity: 0.5;
+  background: #2A3845;
+}
+
+/* 定时选择器 */
+.timer-picker {
+  flex: 0.8;
+  background: rgba(45, 65, 85, 0.6);
+  border-radius: 60rpx;
+  height: 90rpx;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.timer-picker picker{
+  line-height: 90rpx;
+}
+
+.picker-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.picker-icon {
+  font-size: 32rpx;
+  margin-right: 10rpx;
+  color: #A0B3C5;
+}
+
+.picker-text {
+  font-size: 28rpx;
+  color: #E6E6E6;
+}
+
+/* 定时确认按钮 */
+.timer-confirm-btn {
+  flex: 0.7;
+  background: rgba(45, 65, 85, 0.6);
+  border-radius: 60rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 28rpx;
+  color: #E6E6E6;
+  border: 1rpx solid rgba(212, 197, 161, 0.3);
+  margin: 0;
+  padding: 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.timer-confirm-btn.active {
+  background: linear-gradient(145deg, #5A4A3A, #3A2E24);
+  border-color: #D4C5A1;
+  color: #D4C5A1;
+}
+
+.timer-confirm-btn[disabled] {
+  opacity: 0.3;
+}
+
+/* 定时状态显示区 */
+.timer-status {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 50rpx;
+  padding: 24rpx 40rpx;
+  margin-bottom: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1rpx solid rgba(212, 197, 161, 0.2);
+}
+
+.timer-label {
+  font-size: 28rpx;
+  color: #D4C5A1;
+}
+
+.timer-remain {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #7BA7C0;
+  letter-spacing: 2rpx;
+}
+
+/* 播放状态提示 */
+.play-status {
+  text-align: center;
+  margin-bottom: 60rpx;
+  min-height: 60rpx;
+}
+
+.status-text {
+  font-size: 26rpx;
+  color: #A0B3C5;
+}
+
+.status-text.paused {
+  color: #B8A99A;
+}
+
+.status-text.idle {
+  color: #7F8C8D;
+}
+
+/* 页脚 */
+.footer {
+  text-align: center;
+  margin-top: auto;
+  padding-top: 40rpx;
+}
+
+.footer-text {
+  font-size: 24rpx;
+  color: #5F7A8C;
+  letter-spacing: 6rpx;
+}

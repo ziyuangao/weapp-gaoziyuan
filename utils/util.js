@@ -13,6 +13,7 @@ const allMenuList = [
   { id: 8, path: '/pages/book/index', title: '答案之书', subTitle: '简直不敢相信', icon: '../../assets/img/tabbar/book.png', disabled: false },
   { id: 9, path: '/pages/news/index', title: '每日热榜', subTitle: '每5分钟更新', icon: '../../assets/img/tabbar/news.png', disabled: false },
   { id: 10, path: '/pages/nasa/index', title: 'NASA天文图', subTitle: '来自太空的震撼', icon: '../../assets/img/tabbar/nasa.png', disabled: false },
+  { id: 11, path: '/pages/sleep/index', title: '白噪音', subTitle: '晚安', icon: '../../assets/img/tabbar/sleep.png', disabled: false },
   { id: 999, path: '/pages/setting/index', title: '设置', subTitle: '系统设置', icon: '../../assets/img/tabbar/setting.png', disabled: true },
 ]
 

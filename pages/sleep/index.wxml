@@ -1,0 +1,86 @@
+<!-- pages/white-noise/index.wxml -->
+<view class="page">
+
+<!-- 页面主标题 -->
+<view class="title-section">
+  <text class="title">🌙 白噪音 · 助眠</text>
+  <text class="subtitle">选一个喜欢的声音，安心入睡</text>
+</view>
+
+<!-- Swiper 卡片区 -->
+<view class="swiper-section">
+  <swiper
+    class="card-swiper"
+    indicator-dots="{{false}}"
+    autoplay="{{false}}"
+    circular="{{true}}"
+    previous-margin="60rpx"
+    next-margin="60rpx"
+    bindchange="onSwiperChange"
+    current="{{currentIndex}}"
+  >
+    <swiper-item wx:for="{{soundList}}" wx:key="id">
+      <view class="sound-card {{index === currentIndex ? 'active' : ''}}">
+        <text class="sound-title">{{item.name}}</text>
+        <text class="sound-desc">{{item.desc}}</text>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>
+
+<!-- 播放控制行 -->
+<view class="control-row">
+  <!-- 播放/暂停按钮 -->
+  <button 
+    class="play-btn {{isPlaying ? 'playing' : ''}}" 
+    bindtap="onPlayToggle"
+    disabled="{{!currentSound}}"
+  >
+    <text>{{isPlaying ? '⏸ 暂停' : '▶ 播放'}}</text>
+  </button>
+
+  <!-- 定时选择器 -->
+  <view class="timer-picker">
+    <picker 
+      mode="selector" 
+      range="{{timerOptions}}" 
+      value="{{selectedTimerIndex}}"
+      bindchange="onTimerChange"
+      disabled="{{isTimerActive}}"
+    >
+      <view class="picker-display">
+        <text class="picker-icon">⏰</text>
+        <text class="picker-text">{{timerDisplayText}}</text>
+      </view>
+    </picker>
+  </view>
+
+  <!-- 确认/取消定时按钮 -->
+  <button 
+    class="timer-confirm-btn {{isTimerActive ? 'active' : ''}}" 
+    bindtap="onTimerConfirm"
+    disabled="{{selectedTimerIndex === -1 && !isTimerActive}}"
+  >
+    <text>{{isTimerActive ? '✕ 取消定时' : '✓ 确认'}}</text>
+  </button>
+</view>
+
+<!-- 定时状态显示区（纯文字） -->
+<view class="timer-status" wx:if="{{isTimerActive}}">
+  <text class="timer-label">⏳ 定时关闭</text>
+  <text class="timer-remain">{{timerRemainText}}</text>
+</view>
+
+<!-- 当前播放状态提示 -->
+<view class="play-status">
+  <text wx:if="{{isPlaying}}" class="status-text">🎵 正在播放 · {{currentSoundName}}</text>
+  <text wx:elif="{{!isPlaying && currentSound}}" class="status-text paused">⏸ 已暂停 · {{currentSoundName}}</text>
+  <text wx:else class="status-text idle">✨ 选择一个声音开始</text>
+</view>
+
+<!-- 页脚装饰文字 -->
+<view class="footer">
+  <text class="footer-text">愿你有好梦 · 晚安</text>
+</view>
+
+</view>

@@ -23,11 +23,18 @@
     "miniprogram": {
       "list": [
         {
-          "name": "手机归属地查询",
-          "pathName": "pages/mlocation/index",
+          "name": "白噪音",
+          "pathName": "pages/sleep/index",
           "query": "",
           "scene": null,
           "launchMode": "default"
+        },
+        {
+          "name": "手机归属地查询",
+          "pathName": "pages/mlocation/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         },
         {
           "name": "答案之书",
